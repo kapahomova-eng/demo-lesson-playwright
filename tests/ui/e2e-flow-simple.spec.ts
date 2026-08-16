@@ -11,18 +11,9 @@ let authPage: LoginPage
 test.beforeAll(() => {
   loginDto = new Login(USERNAME, PASSWORD)
 })
-test.beforeAll(() => {
-  const username = process.env.DL_USERNAME
-  const password = process.env.DL_PASSWORD
-
-  console.log('DL_USERNAME is set:', Boolean(username))
-  console.log('DL_PASSWORD is set:', Boolean(password))
-
-  if (!username || !password) {
-    throw new Error('DL_USERNAME or DL_PASSWORD is not defined')
-  }
-
-  loginDto = new Login(username, password)
+test.beforeEach(async ({ page }) => {
+  authPage = new LoginPage(page)
+  await authPage.open()
 })
 
 test('signIn button disabled when incorrect data inserted', async ({}) => {

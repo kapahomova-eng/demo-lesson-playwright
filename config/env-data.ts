@@ -7,7 +7,7 @@ if (process.env.CI !== 'true') {
   console.log('Running in CI environment')
 }
 
-const requiredVars = ['URL', 'TEST_USERNAME', 'TEST_PASSWORD']
+const requiredVars = ['URL', 'BE_URL', 'TEST_USERNAME', 'TEST_PASSWORD']
 
 // Check for missing variables
 requiredVars.forEach((varName) => {
