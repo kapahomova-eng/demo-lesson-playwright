@@ -16,6 +16,7 @@ requiredVars.forEach((varName) => {
   }
 })
 
+export const BE_URL: string = process.env.BE_URL!
 export const SERVICE_URL: string = process.env.URL!
 export const USERNAME: string = process.env.TEST_USERNAME!
 export const PASSWORD: string = process.env.TEST_PASSWORD!
